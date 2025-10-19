@@ -45,3 +45,4 @@ class CosineKernel(BaseKernel):
     def compute(self, X, Y=None):
         self.validate_inputs(X, Y)
         return cosine_similarity(X, Y)
+        
