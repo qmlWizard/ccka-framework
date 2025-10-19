@@ -61,4 +61,3 @@ class BaseKernel(ABC):
     def __repr__(self) -> str:
         param_str = ", ".join(f"{k}={v}" for k, v in self.params.items())
         return f"{self.__class__.__name__}({param_str})"
-
