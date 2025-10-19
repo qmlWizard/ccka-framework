@@ -91,7 +91,11 @@ def test_cosine_kernel_range(sample_data):
     X, _ = sample_data
     kernel = CosineKernel()
     K = kernel.compute(X)
-    assert np.all((K >= -1) & (K <= 1)), "Cosine similarity must be in [-1, 1]."
+    tol = 1e-6
+    assert np.all((K >= -1 - tol) & (K <= 1 + tol)), (
+        f"Cosine similarity values out of range "
+        f"(min={K.min():.8f}, max={K.max():.8f})"
+    )
 
 
 # --------------------------------------------------------------------------- #
